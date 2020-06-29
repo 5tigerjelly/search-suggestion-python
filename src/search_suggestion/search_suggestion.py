@@ -1,15 +1,27 @@
 
 _MAX_SUGGESTIONS = 10
 
+
 class _Node:
     def __init__(self, data):
         self.data = data
         self.end_of_word = False
         self.child = {}
 
+
 class SearchSuggestion:
     def __init__(self):
         self.root = _Node(None)
+        self.count = 0
+
+    def get_count(self) -> int:
+        """
+        Returns the total number of words
+
+        Returns:
+            int: Current count
+        """
+        return self.count
 
     def insert(self, word: str) -> None:
         """Given a word will be stored in trie data structure
@@ -24,8 +36,9 @@ class SearchSuggestion:
                 curr.child[word[0]] = _Node(word[0])
             curr = curr.child[word[0]]
             word = word[1:]
-            if len(word) is 0:
+            if len(word) == 0 and not curr.end_of_word:
                 curr.end_of_word = True
+                self.count += 1
 
     def batch_insert(self, words: [str]) -> None:
         """Given a list of words will be stored in trie data structure
