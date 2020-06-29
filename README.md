@@ -5,7 +5,7 @@
 [![PyPI - License](https://img.shields.io/pypi/l/search-suggestion)](https://github.com/5tigerjelly/search-suggestion-python/blob/master/LICENSE)
 
 ## ℹ️ Overview
-Build a search suggestion system with millions of search terms with ultrafast query speed. Search Suggestion utilizes comples trie data structures in the background to manage large datasets without compromising speed.
+Build a search suggestion system with millions of search terms with ultrafast query speed. Search Suggestion utilizes complex trie data structures in the background to manage large datasets without compromising speed.
 
 ## 🏗️ Install
 To install Search Suggestion, simply use pip:
