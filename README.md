@@ -1,8 +1,8 @@
 # Search Suggestion
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/search-suggestion)
-![PyPI](https://img.shields.io/pypi/v/search-suggestion)
-![PyPI - License](https://img.shields.io/pypi/l/search-suggestion)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/search-suggestion)](https://pypi.org/project/search-suggestion)
+[![PyPI](https://img.shields.io/pypi/v/search-suggestion)](https://pypi.org/project/search-suggestion)
+[![PyPI - License](https://img.shields.io/pypi/l/search-suggestion)](https://github.com/5tigerjelly/search-suggestion-python/blob/master/LICENSE)
 
 ## ℹ️ Overview
 Build a search suggestion system with millions of search terms with ultrafast query speed. Search Suggestion utilizes comples trie data structures in the background to manage large datasets without compromising speed.
