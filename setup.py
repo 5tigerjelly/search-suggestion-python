@@ -1,15 +1,12 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
 setuptools.setup(
     name="search-suggestion",
     version="0.1.0",
     author="Chris Oh",
     author_email="chris@5tigerjelly.com",
     description="Search query suggestion service",
-    long_description=long_description,
+    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/5tigerjelly/search-suggestion-python",
     package_dir={'': 'src'},
