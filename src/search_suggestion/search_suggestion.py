@@ -4,6 +4,11 @@ _MAX_SUGGESTIONS = 10
 
 class _Node:
     def __init__(self, data):
+        """Node class used to store words in trie
+
+        Args:
+            data (str): word to save
+        """
         self.data = data
         self.end_of_word = False
         self.child = {}

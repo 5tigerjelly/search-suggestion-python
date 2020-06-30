@@ -9,7 +9,7 @@ Build a search suggestion system with millions of search terms with ultrafast qu
 
 ## 🏗️ Install
 To install Search Suggestion, simply use pip:
-```
+```Shell
 pip install search-suggestion
 ```
 
