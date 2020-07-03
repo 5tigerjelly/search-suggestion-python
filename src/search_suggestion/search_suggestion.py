@@ -66,6 +66,11 @@ class SearchSuggestion:
         """
         result = []
         curr = self.root
+        word = word.strip()
+
+        if not word:
+            return result
+
         og_word = word
 
         while word:

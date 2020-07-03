@@ -14,20 +14,33 @@ class TestSearchSuggestion(unittest.TestCase):
         self.assertEqual(s.search('a'), ["apple"])
         self.assertEqual(s.search('b'), [])
 
+    def test_whitespace(self):
+        s = SearchSuggestion()
+        s.insert("apple")
+        self.assertEqual(s.search('   a'), ["apple"])
+        self.assertEqual(s.search('a   '), ["apple"])
+        self.assertEqual(s.search(' a '), ["apple"])
+
+    def test_batch_insert(self):
+        s = SearchSuggestion()
+        s.batch_insert(["apple", "grape", "banana"])
+        self.assertEqual(s.search('a'), ["apple"])
+
     def test_empty_search_word(self):
         s = SearchSuggestion()
         s.batch_insert(["apple", "grape", "banana"])
-        self.assertSetEqual(set(s.search('')), {'apple', 'banana', 'grape'})
+        self.assertEqual(s.search(''), [])
+        self.assertEqual(s.search('  '), [])
 
     def test_bad_search_word(self):
         s = SearchSuggestion()
         s.batch_insert(["apple", "grape", "banana"])
         self.assertEqual(s.search('c'), [])
 
-    def test(self):
+    def test_search_multiple_words(self):
         s = SearchSuggestion()
-        s.batch_insert(["apple", "grape", "banana"])
-        self.assertEqual(s.search('a'), ["apple"])
+        s.batch_insert(["apple", "app", "abs"])
+        self.assertSetEqual(set(s.search('a')), {"apple", "app", "abs"})
 
 if __name__ == '__main__':
     unittest.main()
